@@ -1,0 +1,16 @@
+{
+  "name": "zcc",
+  "version": "1.0.0",
+  "description": "This is the zendesk coding challenge",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "mpate138@stevens.edu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "mocha": "^9.1.3",
+    "prompt-sync": "^4.1.6"
+  }
+}
