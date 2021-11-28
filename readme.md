@@ -1,17 +1,17 @@
-### Zendesk Ticket Viewer \
+### Zendesk Ticket Viewer 
 
-The CLI based ticket viewer system connects to Zendesk API where a user can view total tickets and fetch ticket details.\    
+The CLI based ticket viewer system connects to Zendesk API where a user can view total tickets and fetch ticket details. 
 
 **Built With:**\
--NodeJS\
+- NodeJS
 
 **Install the dependencies:**\
 axios\
-prompt-sync\
-mocha\
+prompt-sync\ 
+mocha
 
 **Instructions:**\
-RUN ```npm install``` to install all packages from package.json
+RUN ```npm install``` to install all packages from package.json\
 RUN ```node ./src/main.js``` to run the program
 
 **Testing:**\
