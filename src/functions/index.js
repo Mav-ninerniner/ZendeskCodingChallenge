@@ -1,9 +1,14 @@
 const axios = require('axios');
 
-const subDomain = 'zccmarvinstevens';
+// const subDomain = 'zccmarvinstevens';
+// const zendeskBaseAPIURL = `https://${subDomain}.zendesk.com/api/v2/`;
+// const username = 'mpate138@stevens.edu';
+// const password = 'marvin1234';
+
+const subDomain = 'prnv';
 const zendeskBaseAPIURL = `https://${subDomain}.zendesk.com/api/v2/`;
-const username = 'mpate138@stevens.edu';
-const password = 'marvin1234';
+const username = '2345.stkabirdio@gmail.com';
+const password = 'Temp1234';
 
 /**
  * Display error message
@@ -57,7 +62,7 @@ function printTabularData(data) {
       created_at
     }
   })
-  console.table(printableData)
+  console.table(printableData);
 }
 
 /**
@@ -84,10 +89,10 @@ async function fetchAllTickets() {
       },
       url: zendeskBaseAPIURL + 'tickets.json'
     })
-    return { data: tickets }
+    return { data: tickets };
   } catch (error) {
     console.log('error', error);
-    errorHandler('fetchAllTickets', error)
+    errorHandler('fetchAllTickets', error);
     return { error }
   }
 }
@@ -108,7 +113,7 @@ async function countTickets() {
     return { data: tickets };
 
   } catch (error) {
-    errorHandler('countTickets', error)
+    errorHandler('countTickets', error);
     return { error }
   }
 }
@@ -157,4 +162,8 @@ async function fetchPaginationTickets(url) {
   }
 }
 
-module.exports = { printTabularData, basicAuthentication, fetchTicketDetail, countTickets, fetchAllTickets, fetchPaginationTickets, errorHandler };
+function getBaseURL(){
+  return zendeskBaseAPIURL;
+}
+
+module.exports = { printTabularData, basicAuthentication, fetchTicketDetail, countTickets, fetchAllTickets, fetchPaginationTickets, errorHandler, getBaseURL };

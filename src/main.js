@@ -1,6 +1,7 @@
 const fs = require('fs');
 const userPrompt = require('prompt-sync')({ sigint: true });
-const { printTabularData, fetchTicketDetail, countTickets, fetchAllTickets, fetchPaginationTickets } = require('./functions/index')
+const pageSize = 25;  //change
+const { printTabularData, fetchTicketDetail, countTickets, fetchAllTickets, fetchPaginationTickets, getBaseURL } = require('./functions/index')
 
 async function start() {
   let action;
@@ -71,7 +72,7 @@ async function start() {
       case 'fetch-pagination-tickets':
       case '4': {
         cont = true
-        var url = `https://zccmarvinstevens.zendesk.com/api/v2/` + 'tickets.json?page[size]=25'
+        var url = getBaseURL() + `tickets.json?page[size]=${pageSize}`;
         while (cont) {
           cont = false
           const { error, data } = await fetchPaginationTickets(url);
